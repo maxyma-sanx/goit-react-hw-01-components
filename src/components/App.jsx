@@ -1,3 +1,5 @@
+import { GlobalStyle } from './GlobalStyle/GlobalStyle';
+
 import { Profile } from 'components/Profile/Profile';
 import { Statistics } from 'components/Statistics/Statistics';
 import { FriendList } from 'components/FriendList/FriendList';
@@ -12,6 +14,7 @@ export const App = () => {
       <Statistics title="Upload stats" stats={statistics} />
       <FriendList friends={friends} />
       <TransactionHistory transactions={transactions} />
+      <GlobalStyle />
     </>
   );
 };
