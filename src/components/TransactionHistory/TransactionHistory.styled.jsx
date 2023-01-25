@@ -31,10 +31,9 @@ export const TransactionTableHead = styled.th`
 
 export const TransactionTableRow = styled.tr`
   background-color: ${({ index }) => (index % 2 === 0 ? '#fff' : 'lightgrey')};
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover {
-    transform: scale(1.03);
-    border: 1px solid lightgrey;
+    background-color: darkgrey;
   }
 `;
