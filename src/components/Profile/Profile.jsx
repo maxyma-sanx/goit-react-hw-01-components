@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 import {
+  ProfileTitle,
   ProfileCard,
   ProfileDescr,
+  ProfileImg,
   ProfileName,
   ProfileText,
+  ProfileStats,
+  ProfileStatsItem,
+  ProfileStatsLabel,
+  ProfileStatsQuantity,
 } from './Profile.styled';
 
 export const Profile = ({
@@ -16,29 +22,32 @@ export const Profile = ({
   },
 }) => {
   return (
-    <ProfileCard>
-      <ProfileDescr>
-        <img src={avatar} alt={username} className="avatar" />
-        <ProfileName>{username}</ProfileName>
-        <ProfileText>@{tag}</ProfileText>
-        <ProfileText>{location}</ProfileText>
-      </ProfileDescr>
+    <>
+      <ProfileTitle>Social network profile</ProfileTitle>
+      <ProfileCard>
+        <ProfileDescr>
+          <ProfileImg src={avatar} alt={username} />
+          <ProfileName>{username}</ProfileName>
+          <ProfileText>@{tag}</ProfileText>
+          <ProfileText>{location}</ProfileText>
+        </ProfileDescr>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </ProfileCard>
+        <ProfileStats>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Followers</ProfileStatsLabel>
+            <ProfileStatsQuantity>{followers}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Views</ProfileStatsLabel>
+            <ProfileStatsQuantity>{views}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Likes</ProfileStatsLabel>
+            <ProfileStatsQuantity>{likes}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+        </ProfileStats>
+      </ProfileCard>
+    </>
   );
 };
 

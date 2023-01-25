@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
+import { TransactionTableCeil } from './TransactionItem.styled';
 
 export const TransactionItem = ({
   transaction: { type, amount, currency },
 }) => {
   return (
     <>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
+      <TransactionTableCeil>{type}</TransactionTableCeil>
+      <TransactionTableCeil>{amount}</TransactionTableCeil>
+      <TransactionTableCeil>{currency}</TransactionTableCeil>
     </>
   );
 };
