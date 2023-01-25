@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const TransactionItem = ({
   transaction: { type, amount, currency },
 }) => {
@@ -8,4 +10,12 @@ export const TransactionItem = ({
       <td>{currency}</td>
     </>
   );
+};
+
+TransactionItem.propTypes = {
+  transaction: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+  }).isRequired,
 };
