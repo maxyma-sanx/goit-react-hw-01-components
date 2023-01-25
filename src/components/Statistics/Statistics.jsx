@@ -6,7 +6,11 @@ export const Statistics = ({ title, stats }) => {
       {title && <h2 className="title">{title}</h2>}
 
       <ul className="stat-list">
-        <StatisticsItem stats={stats} />
+        {stats.map(stat => (
+          <li className="item" key={stat.id}>
+            <StatisticsItem stat={stat} />
+          </li>
+        ))}
       </ul>
     </section>
   );
